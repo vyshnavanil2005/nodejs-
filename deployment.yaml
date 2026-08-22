@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nodejs-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nodejs-app
@@ -15,7 +15,9 @@ spec:
         app: nodejs-app
     spec:
       containers:
-      - name: nodejs-app
-        image: iamvyshnav/nodejs-app:v1
+      - name: nodejs-container
+        image: iamvyshnav/nodejs-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
+
